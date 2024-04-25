@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>sssc-flink-cusfcn</artifactId>
+    <version>2.0.1</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <flink.version>1.12.2</flink.version>
+        <kafka.version>0.10.2.1</kafka.version>
+        <scala.binary.version>2.12</scala.binary.version>
+        <Scope>compile</Scope>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>htsc</id>
+            <name>htsc group repositories</name>
+            <url>http://repo.htzq.htsc.com.cn/repository/DataCenter/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshot</id>
+            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/central</url>
+        </repository>
+        <repository>
+            <id>public</id>
+            <name>public</name>
+            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/CRM-Snapshots</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/central</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>local_mirror</id>
+            <name>local_mirror</name>
+            <url>http://repo.htzq.htsc.com.cn/nexus/content/groups/CRM-Group/</url>
+        </repository>
+        <repository>
+            <id>AIMAP</id>
+            <name>AIMAP</name>
+            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/AIMAP</url>
+        </repository>
+        <repository>
+            <id>Architect</id>
+            <name>Architect</name>
+            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/Architect/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Architect-Snapshot</id>
+            <name>Architect Snapshot Central</name>
+            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/Architect-Snapshot/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+<!--        <repository>-->
+<!--            <id>AIMAP</id>-->
+<!--            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/AIMAP</url>-->
+<!--            <releases><enabled>true</enabled></releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--                <updatePolicy>always</updatePolicy>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>Architect</id>-->
+<!--            <url>http://repo.htzq.htsc.com.cn/nexus/content/repositories/Architect</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>CRM</id>-->
+<!--            <url>http://repo.htzq.htsc.com.cn/repository/CRM-Snapshots</url>-->
+<!--        </repository>-->
+    </repositories>
+
+    <dependencies>
+<!--                   dubbo     -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter</artifactId>-->
+<!--            <version>2.7.8</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--            <version>2.7.8</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;接口模块&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.xice.dubbo</groupId>-->
+<!--            <artifactId>dubbo-interface</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
+        <!--引入dubbo-->
+<!--        <dependency>-->
+<!--            <groupId>io.dubbo.springboot</groupId>-->
+<!--            <artifactId>spring-boot-starter-dubbo</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
+
+
+
+        <dependency>
+            <groupId>com.htsc.paas</groupId>
+            <artifactId>paas-sdk-morphling</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+<!--&lt;!&ndash;                  dubbo依赖    华泰                             &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.htsc.cams.strategy</groupId>-->
+<!--            <artifactId>dapi-l6o03c16</artifactId>-->
+<!--            <version>1.0.3-20210714.114029-2</version>-->
+<!--            &lt;!&ndash;   <scope>system</scope>&ndash;&gt;-->
+<!--            &lt;!&ndash;   <systemPath>${project.basedir}/lib/dapi-l6o03c16-1.0.3-20210714.114029-2.jar</systemPath>&ndash;&gt;-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.htsc.cams.bond</groupId>-->
+<!--            <artifactId>mapi-m6n92593</artifactId>-->
+<!--            <version>1.0.0-SNAPSHOT</version>-->
+<!--        &lt;!&ndash;   <scope>system</scope>&ndash;&gt;-->
+<!--        &lt;!&ndash;   <systemPath>${project.basedir}/lib/mapi-m6n92593-1.0.0-20220902.111616-9.jar</systemPath>&ndash;&gt;-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.htsc.cams.cds</groupId>-->
+<!--            <artifactId>mapi-m816eccb</artifactId>-->
+<!--            <version>1.0.0-SNAPSHOT</version>-->
+<!--        &lt;!&ndash;   <scope>system</scope>&ndash;&gt;-->
+<!--        &lt;!&ndash;   <systemPath>${project.basedir}/lib/mapi-m816eccb-1.0.0-20220907.094622-47.jar</systemPath>&ndash;&gt;-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-context &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-context</artifactId>-->
+<!--            <version>5.3.18</version>-->
+<!--        </dependency>-->
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.83</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.htsc</groupId>
+            <artifactId>mdc-model</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-common</artifactId>
+            <version>${flink.version}</version>
+            <scope>${Scope}</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.11.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+            <scope>${Scope}</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.12</version>
+            <scope>${Scope}</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+            <scope>${Scope}</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+            <scope>${Scope}</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams</artifactId>
+            <version>${kafka.version}</version>
+            <scope>${Scope}</scope>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-resources-plugin</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
